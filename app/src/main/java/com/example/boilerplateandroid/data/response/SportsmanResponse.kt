@@ -2,13 +2,15 @@ package com.example.boilerplateandroid.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class ExpenseResponse(
+data class SportsmanResponse(
     @SerializedName("id")
     val id: String,
     @SerializedName("name")
     val name: String,
-    @SerializedName("price")
-    val price: Double,
-    @SerializedName("date")
-    val date: String
+    @SerializedName("age")
+    val age: String,
+    @SerializedName("distance")
+    val distance: String,
+    @SerializedName("sports")
+    val sports: List<String>
 )
