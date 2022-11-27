@@ -25,7 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.nearby_list.NearbyActivity"/>
+        <activity android:name=".presentation.nearby_sportman_list.NearbyActivity"/>
+        <activity android:name=".presentation.sportman_detail.SportsmanDetailsActivity"/>
     </application>
 
 </manifest>

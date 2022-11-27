@@ -1,12 +1,9 @@
-package com.example.boilerplateandroid.presentation.nearby_list
+package com.example.boilerplateandroid.presentation.nearby_sportman_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.boilerplateandroid.data.response.SportsmanNearbyResponse
-import com.example.boilerplateandroid.data.response.SportsmanResponse
 import com.example.boilerplateandroid.databinding.ItemNearbyUserBinding
 import com.example.boilerplateandroid.model.Sportsman
 

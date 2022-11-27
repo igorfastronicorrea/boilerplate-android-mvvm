@@ -1,12 +1,10 @@
-package com.example.boilerplateandroid.presentation.nearby_list
+package com.example.boilerplateandroid.presentation.nearby_sportman_list
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.boilerplateandroid.data.response.SportsmanNearbyResponse
-import com.example.boilerplateandroid.data.response.SportsmanResponse
 import com.example.boilerplateandroid.model.Sportsman
 import com.example.boilerplateandroid.repository.nearbyme.FetchNearbyMeRepository
 import com.example.boilerplateandroid.utils.NetworkResult
@@ -23,7 +21,7 @@ class NearbyViewModel(
         getNearbyMeCall()
     }
 
-    fun getNearbyMeCall() = viewModelScope.launch {
+    private fun getNearbyMeCall() = viewModelScope.launch {
         safeNearbyMeCall()
     }
 
