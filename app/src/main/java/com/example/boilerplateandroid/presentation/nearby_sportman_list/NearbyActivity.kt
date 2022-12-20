@@ -19,11 +19,10 @@ class NearbyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityNearbyMeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = ActivityNearbyMeBinding.inflate(layoutInflater)asdasdasdasdasdas
+        setContentView(binding.root)aaaaaaaaaa
 
-        observerNearbyMeList()
-        setupRecyclerView()
+        setupRecyclerView()ssssss
     }
 
     private fun observerNearbyMeList(){

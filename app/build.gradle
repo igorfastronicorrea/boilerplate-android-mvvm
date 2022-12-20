@@ -4,6 +4,19 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
 }
+apply plugin: 'org.sonarqube'
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "BoilerplateAndroid"
+        property "sonar.projectKey", ":mobileSalesForce"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.language", "kotlin"
+        property "sonar.sources", "src/main/"
+        property "sonar.login", "admin"
+        property "sonar.password", "root"
+    }
+}
 
 android {
     compileSdk 32
@@ -39,11 +52,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     buildFeatures{
         viewBinding true

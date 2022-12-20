@@ -5,6 +5,8 @@ import com.example.boilerplateandroid.data.response.SportsmanNearbyResponse
 import com.example.boilerplateandroid.data.response.SportsmanResponse
 import com.example.boilerplateandroid.model.Sportsman
 import com.example.boilerplateandroid.utils.NetworkResult
+import java.lang.RuntimeException
+
 
 class FetchNearbyMeRepositoryImpl(
     private val api: SportClubAPIService,
@@ -12,10 +14,16 @@ class FetchNearbyMeRepositoryImpl(
 ): FetchNearbyMeRepository {
 
     override suspend fun fetchNearbyMe(): NetworkResult<List<Sportsman>> {
-        val response = api.fetchSportsmanNearby()
-        val sportman: List<Sportsman> = response.sportsman.map {
-            mapper.transformToSportsmanModel(it)
+        try {
+            val response = api.fetchSportsmanNearby()
+            val sportsman: List<Sportsman> = response.sportsman.map {
+                mapper.transformToSportsmanModel(it)
+            }
+            return NetworkResult.Success(sportsman)
+        }catch (e: Exception){
+            NetworkResult.Error<Nothing>(e)
+            throw RuntimeException(e)
         }
-        return NetworkResult.Success(sportman)
+
     }
 }
